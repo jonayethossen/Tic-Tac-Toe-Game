@@ -1,12 +1,7 @@
 import "./App.css";
 
 function App() {
-  return (
-    <>
-      {" "}
-      <div>jonayet hossen</div>
-    </>
-  );
+  return <></>;
 }
 
 export default App;
