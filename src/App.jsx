@@ -25,6 +25,7 @@ export default function Board() {
         <Square />
         <Square />
         <Square />
+        <Square />
       </div>
       <div className="flex">
         <Square />
