@@ -1,3 +1,12 @@
+// Game
+//   ->Board
+//     ->  Square
+//   -> History
+
 export default function App() {
-  return <></>;
+  return (
+    <>
+      <div>Tic tac toe</div>
+    </>
+  );
 }
