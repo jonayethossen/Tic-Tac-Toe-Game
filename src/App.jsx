@@ -2,31 +2,39 @@
 //   ->Board
 //     ->  Square
 //   -> History
-function Square({ value }) {
+import { useState } from "react";
+function Square() {
+  const [value, setValue] = useState(null);
+  function handleClick() {
+    setValue("X");
+  }
   return (
-    <button className="text-5xl font-bold border border-2 m-2 h-20 w-20">
+    <button
+      className="text-5xl font-bold border-2 m-2 h-20 w-20 "
+      onClick={handleClick}
+    >
       {value}
     </button>
   );
 }
-
+//board function
 export default function Board() {
   return (
     <>
-      <div>
-        <Square value={1} />
-        <Square value={2} />
-        <Square value={3} />
+      <div className="flex">
+        <Square />
+        <Square />
+        <Square />
       </div>
-      <div>
-        <Square value={4} />
-        <Square value={5} />
-        <Square value={6} />
+      <div className="flex">
+        <Square />
+        <Square />
+        <Square />
       </div>
-      <div>
-        <Square value={7} />
-        <Square value={8} />
-        <Square value={9} />
+      <div className="flex">
+        <Square />
+        <Square />
+        <Square />
       </div>
     </>
   );
