@@ -3,9 +3,8 @@
 //     ->  Square
 //   -> History
 import { useState } from "react";
-
+//Square function
 function Square({ value, onSquareClick }) {
-  function handleClick() {}
   return (
     <button
       className="text-5xl font-bold border-2 m-2 h-20 w-20 "
@@ -15,11 +14,14 @@ function Square({ value, onSquareClick }) {
     </button>
   );
 }
-
+// Board function
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   function handleClick(i) {
+    if (squares[i]) {
+      return;
+    }
     const nextSquare = squares.slice();
     if (xIsNext) {
       nextSquare[i] = "x";
