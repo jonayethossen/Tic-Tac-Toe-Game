@@ -3,7 +3,7 @@
 //     ->  Square
 //   -> History
 import { useState } from "react";
-//Square function
+
 function Square({ value, onSquareClick }) {
   return (
     <button
