@@ -3,7 +3,7 @@
 //     ->  Square
 //   -> History
 import { useState } from "react";
-//Square function
+
 function Square({ value }) {
   return (
     <button
@@ -14,7 +14,7 @@ function Square({ value }) {
     </button>
   );
 }
-//board function
+
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
