@@ -4,11 +4,12 @@
 //   -> History
 import { useState } from "react";
 
-function Square({ value }) {
+function Square({ value, onSquareClick }) {
+  function handleClick() {}
   return (
     <button
       className="text-5xl font-bold border-2 m-2 h-20 w-20 "
-      onClick={handleClick}
+      onClick={onSquareClick}
     >
       {value}
     </button>
@@ -17,11 +18,13 @@ function Square({ value }) {
 
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
-
+  function handleClick() {
+    console.log("clicked!");
+  }
   return (
     <>
       <div className="flex">
-        <Square value={squares[0]} />
+        <Square value={squares[0]} onSquareClick={handleClick} />
         <Square value={squares[1]} />
         <Square value={squares[2]} />
       </div>
