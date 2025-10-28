@@ -18,15 +18,22 @@ function Square({ value, onSquareClick }) {
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+  const winnner = claculateWinner(squares);
+  let status;
+  if (winnner) {
+    status = `Winner : ${winnner}`;
+  } else {
+    status = "Next Player : " + (xIsNext ? "X" : "O");
+  }
   function handleClick(i) {
-    if (squares[i]) {
+    if (squares[i] || claculateWinner(squares)) {
       return;
     }
     const nextSquare = squares.slice();
     if (xIsNext) {
-      nextSquare[i] = "x";
+      nextSquare[i] = "X";
     } else {
-      nextSquare[i] = "o";
+      nextSquare[i] = "O";
     }
 
     setSquares(nextSquare);
@@ -34,6 +41,7 @@ export default function Board() {
   }
   return (
     <>
+      <div className="text-3xl font-bold">{status}</div>
       <div className="flex">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -52,6 +60,7 @@ export default function Board() {
     </>
   );
 }
+
 //Winner Calculate function
 function claculateWinner(squares) {
   const lines = [
