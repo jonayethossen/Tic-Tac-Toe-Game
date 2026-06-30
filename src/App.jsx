@@ -118,11 +118,11 @@
 //   }
 //   return null;
 // }
+
 import { useState } from "react";
 
 // Square Component
 function Square({ value, onSquareClick }) {
-  // X এবং O এর জন্য আলাদা গ্লোয়িং কালার সেট করছি
   const baseStyle =
     "text-5xl font-black rounded-2xl h-24 w-24 flex items-center justify-center transition-all duration-300 shadow-inner border border-gray-700/50";
   const xStyle =
